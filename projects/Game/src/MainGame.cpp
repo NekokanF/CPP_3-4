@@ -34,7 +34,7 @@ namespace
     {
         auto sphere = make_unique<GameObject>(u8"Sphere",
             SphereRenderer::create<VertexPN>(u8"resource/VertexTest.hlsl"),
-//              SphereRenderer::create<VertexPN>(u8"resource/PixelTest1.hlsl"),
+//             SphereRenderer::create<VertexPN>(u8"resource/PixelTest1.hlsl"),
 //            SphereRenderer::create<VertexPNT>(u8"resource/PixelTest2.hlsl", u8"resource/wood-2.png"),
             make_unique<SphereCollider>(Vector3::zero, 1.0f),
             make_unique<Rigidbody>()

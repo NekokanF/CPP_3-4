@@ -73,9 +73,13 @@ float4 PS(PSInput In) : SV_Target0
 {
     // 明示的に法線を正規化（モデルスケール非均等だと崩れるため）
     float3 N = normalize(In.nrmW);
+    
 
     // ライトループ
     float4 diffAccum = ambientColor; // 環境光
+    // diffAccum += float4(0, 0, 0, 0);
+    float NdotL = dot(N, -directionW);
+    diffAccum += directionalColor * NdotL;
 
     // カラー合成
     float4 color = float4(diffAccum.rgb, 1) * baseColor;
